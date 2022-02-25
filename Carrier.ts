@@ -1,5 +1,15 @@
-import { Fortifiable } from '@civ-clone/base-unit-type-fortifiable/Fortifiable';
+import Air from '@civ-clone/base-unit-type-air/Air';
+import NavalTransport from '@civ-clone/base-unit-type-naval-transport/NavalTransport';
+import Unit from '@civ-clone/core-unit/Unit';
 
-export class Carrier extends Fortifiable {}
+export class Carrier extends NavalTransport {
+  canStow(unit: Unit): boolean {
+    return unit instanceof Air && super.canStow(unit);
+  }
+
+  capacity(): number {
+    return 8;
+  }
+}
 
 export default Carrier;
