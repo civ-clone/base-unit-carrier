@@ -1,4 +1,3 @@
 # base-unit-carrier
 
-This is a template repo.
-
+Contains the `Carrier` `Unit` class.
